@@ -13,27 +13,18 @@ router = APIRouter()
 
 analyzer = ConversationAnalyzer()
 clarifier = ClarificationEngine()
-recommender = RecommendationEngine()
-gemini = GeminiService()
+recommender = None
+gemini = None
 guard = PromptGuard()
 off_topic_guard = OffTopicGuard()
 
 @router.post("/chat")
 def chat(request: ChatRequest):
-    
-    # Convert Pydantic models to dictionaries
-    messages = [msg.model_dump() for msg in request.messages]
-
-    # Get latest user message
-    latest_message = messages[-1]["content"].lower()
-
-    # Prompt Injection Protection
-    if not guard.is_safe(latest_message):
-        return {
-            "reply": "I can only assist with SHL assessment recommendations. Please ask about hiring needs, assessments, or candidate evaluation.",
-            "recommendations": [],
-            "end_of_conversation": True
-        }
+    return {
+        "reply": "Deployment successful",
+        "recommendations": [],
+        "end_of_conversation": True
+    }
 
     # Handle comparison requests (placeholder)
     if "compare" in latest_message:
