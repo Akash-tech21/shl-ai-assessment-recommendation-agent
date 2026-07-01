@@ -8,16 +8,22 @@ class RecommendationEngine:
 
     def recommend(self, context):
 
+        role = context.get("role") or ""
+        experience = context.get("experience") or ""
+        skills = context.get("skills") or []
+        assessment_types = context.get("assessment_types") or []
+
         query = f"""
-        Role: {context["role"]}
+Role: {role}
 
-        Experience: {context["experience"]}
+Experience: {experience}
 
-        Skills: {' '.join(context["skills"])}
+Skills:
+{' '.join(skills)}
 
-        Assessment Types:
-        {' '.join(context["assessment_types"])}
-        """
+Assessment Types:
+{' '.join(assessment_types)}
+"""
 
         results = self.retriever.search(
             query=query,

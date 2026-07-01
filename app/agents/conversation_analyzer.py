@@ -10,8 +10,9 @@ class ConversationAnalyzer:
 
     def analyze(self, messages):
 
+        # Convert Pydantic Message objects into conversation text
         conversation = "\n".join(
-            f"{msg['role']}: {msg['content']}"
+            f"{msg.role}: {msg.content}"
             for msg in messages
         )
 
@@ -26,10 +27,10 @@ Schema:
     "role": "",
     "experience": "",
     "skills": [],
-    "job_levels":"",
+    "job_levels": "",
     "assessment_types": [],
-    "remote":null,
-    "adaptive":null,
+    "remote": null,
+    "adaptive": null,
     "ready": true
 }}
 
@@ -54,6 +55,9 @@ Conversation:
                 "role": None,
                 "experience": None,
                 "skills": [],
+                "job_levels": None,
                 "assessment_types": [],
-                "ready": False
+                "remote": None,
+                "adaptive": None,
+                "ready": False,
             }

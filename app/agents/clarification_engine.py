@@ -2,21 +2,24 @@ class ClarificationEngine:
 
     def decide(self, context):
 
+        role = context.get("role")
+        experience = context.get("experience")
+
         # Missing role
-        if not context["role"]:
+        if not role:
             return {
                 "ready": False,
                 "question": "What role are you hiring for?"
             }
 
         # Missing experience
-        if not context["experience"]:
+        if not experience:
             return {
                 "ready": False,
                 "question": "What is the expected experience level?"
             }
 
-        # Ready
+        # Everything required is available
         return {
             "ready": True,
             "question": None
