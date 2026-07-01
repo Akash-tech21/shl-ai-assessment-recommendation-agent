@@ -1,10 +1,12 @@
 services:
   - type: web
-    name: shl-ai-agent
-    runtime: python
+    name: shl-ai-assessment-recommendation-agent
+
+    env: python
+
     plan: free
 
-    buildCommand: pip install -r requirements.txt
+    buildCommand: pip install --upgrade pip && pip install -r requirements.txt
 
     startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
 
