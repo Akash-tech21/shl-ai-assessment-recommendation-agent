@@ -1,0 +1,32 @@
+[
+    {
+        "query": "Recommend Java assessments for experienced developers",
+        "expected": [
+            "Java 8 (New)",
+            "Core Java (Advanced Level) (New)"
+        ]
+    },
+    {
+        "query": "Recommend Python assessments",
+        "expected": [
+            "Python (New)"
+        ]
+    },
+    {
+        "query": "Recommend personality assessments",
+        "expected": [
+            "OPQ",
+            "Occupational Personality Questionnaire"
+        ]
+    },
+    {
+        "query": "Recommend numerical reasoning assessments",
+        "expected": [
+            "SHL Verify Interactive – Numerical Reasoning"
+        ]
+    },
+    {
+        "query": "Recommend graduate assessments",
+        "expected": []
+    }
+]

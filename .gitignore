@@ -1,0 +1,37 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Virtual Environments
+venv/
+.envex/
+
+# Environment Variables
+.env
+
+# Logs
+logs/
+*.log
+
+# Pytest
+.pytest_cache/
+
+# IDE
+.vscode/
+.idea/
+
+# Vector Store
+data/vectorstore/
+*.faiss
+*.pkl
+
+# Build Files
+build/
+dist/
+*.egg-info/
+
+# OS Files
+.DS_Store
+Thumbs.db
